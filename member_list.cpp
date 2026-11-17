@@ -13,7 +13,6 @@ struct MemberList {
     int count;
 };
 
-// Funciones recursivas auxiliares (ya sin static)
 Member *member_list_find_rec(MemberListNode *node, int num) {
     if (node == nullptr) return nullptr;
     int n = member_number(node->member);
