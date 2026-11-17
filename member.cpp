@@ -14,7 +14,6 @@ struct Member {
     int reservations;
 };
 
-// Funciones recursivas auxiliares (ya sin static)
 int count_loans_rec(LoanNode *node) {
     if (node == nullptr) return 0;
     return 1 + count_loans_rec(node->next);
