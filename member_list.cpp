@@ -11,7 +11,7 @@ struct MemberList {
     int count;
 };
 
-static Member *member_list_find_rec(MemberListNode *node, int num) {
+Member *member_list_find_rec(MemberListNode *node, int num) {
     if (node == nullptr) return nullptr;
     int n = member_number(node->member);
     if (num == n) return node->member;
@@ -97,7 +97,7 @@ void member_list_print(const MemberList *list) {
     }
 }
 
-static void member_list_destroy_rec(MemberListNode *node) {
+void member_list_destroy_rec(MemberListNode *node) {
     if (node == nullptr) return;
     member_list_destroy_rec(node->next);
     member_destroy(node->member);
