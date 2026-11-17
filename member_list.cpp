@@ -1,6 +1,8 @@
 #include "member_list.hpp"
 #include <iostream>
 
+using namespace std;
+
 struct MemberListNode {
     Member *member;
     MemberListNode *next;
@@ -11,12 +13,20 @@ struct MemberList {
     int count;
 };
 
+// Funciones recursivas auxiliares (ya sin static)
 Member *member_list_find_rec(MemberListNode *node, int num) {
     if (node == nullptr) return nullptr;
     int n = member_number(node->member);
     if (num == n) return node->member;
     if (num < n) return nullptr;
     return member_list_find_rec(node->next, num);
+}
+
+void member_list_destroy_rec(MemberListNode *node) {
+    if (node == nullptr) return;
+    member_list_destroy_rec(node->next);
+    member_destroy(node->member);
+    delete node;
 }
 
 MemberList *member_list_create() {
@@ -86,22 +96,15 @@ int member_list_count(const MemberList *list) {
 }
 
 void member_list_print(const MemberList *list) {
-    std::cout << "SOCIOS:" << std::endl;
+    cout << "SOCIOS:" << endl;
     if (list == nullptr) return;
 
     for (MemberListNode *node = list->head; node != nullptr; node = node->next) {
         Member *m = node->member;
-        std::cout << member_number(m) << " " << member_name(m)
-                  << " prestamos=" << member_loans(m)
-                  << " reservas=" << member_reservations(m) << std::endl;
+        cout << member_number(m) << " " << member_name(m)
+             << " prestamos=" << member_loans(m)
+             << " reservas=" << member_reservations(m) << endl;
     }
-}
-
-void member_list_destroy_rec(MemberListNode *node) {
-    if (node == nullptr) return;
-    member_list_destroy_rec(node->next);
-    member_destroy(node->member);
-    delete node;
 }
 
 void member_list_destroy(MemberList *list) {
