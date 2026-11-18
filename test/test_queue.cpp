@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main() {
+void test_queue() {
     Queue* cola = queue_create();
 
     cout << "Cola vacia: " << queue_is_empty(cola) << endl;
@@ -31,5 +31,4 @@ int main() {
 
     queue_destroy(cola);
 
-    return 0;
 }

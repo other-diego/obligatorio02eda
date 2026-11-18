@@ -2,7 +2,7 @@
 #include "member.hpp"
 using namespace std;
 
-int main() {
+void test_member() {
     Member *m = member_create(1001, "Bruno");
     cout << member_number(m) << " "; // esperado: 1001
     cout << member_name(m) << " ";   // esperado: Bruno
@@ -29,5 +29,4 @@ int main() {
 
     member_destroy(m);
     cout << "test_member OK" << endl;
-    return 0;
 }

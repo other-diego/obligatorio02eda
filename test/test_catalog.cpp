@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main(void) {
+void test_catalog() {
 
     Catalog* c = catalog_create();
 
@@ -66,5 +66,4 @@ int main(void) {
     catalog_destroy(grande);
 
     cout << "Fin" << endl;
-    return 0;
 }

@@ -1,6 +1,6 @@
 #include "library.cpp"
 
-int main() {
+void test_library() {
     Library* biblioteca = library_create();
     
     Book* libro = book_create(50, 1, "Ficciones", "Borges");
@@ -23,5 +23,4 @@ int main() {
     stack_print_top(biblioteca->historial, 4);
 
     library_destroy(biblioteca);
-    return 0;
 }

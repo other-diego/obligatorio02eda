@@ -2,7 +2,7 @@
 #include "member_list.hpp"
 using namespace std;
 
-int main() {
+void test_member_list() {
     MemberList *list = member_list_create();
     cout << member_list_count(list) << endl; // esperado: 0
 
@@ -31,5 +31,4 @@ int main() {
 
     member_list_destroy(list);
     cout << "test_member_list OK" << endl;
-    return 0;
 }
