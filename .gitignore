@@ -1,0 +1,4 @@
+biblioteca
+test/tests
+*.o
+*.exe

@@ -1,0 +1,26 @@
+OK socio 1002 agregado
+OK socio 1001 agregado
+OK libro 50 agregado
+OK libro 20 agregado
+OK libro 70 agregado
+OK prestamo 50 a socio 1001
+OK reserva 50 para socio 1002 (posicion 1)
+50 Ficciones Borges 0/1
+RESERVAS: 1002
+ERROR socio 1003 inexistente
+OK devolucion 50 de socio 1001; prestado a socio 1002 por reserva
+CATALOGO:
+20 Rayuela Cortazar 2/2
+50 Ficciones Borges 0/1
+70 El_Aleph Borges 1/1
+AUTOR Borges:
+50 Ficciones
+70 El_Aleph
+SOCIOS:
+1001 Bruno prestamos=0 reservas=0
+1002 Ana prestamos=1 reservas=0
+HISTORIAL:
+PRESTAR 1002 50
+DEVOLVER 1001 50
+RESERVA 1002 50
+ESTADISTICAS: libros=3 altura=2 socios=2 prestamos=1 reservas=0

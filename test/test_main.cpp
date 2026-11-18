@@ -1,9 +1,8 @@
 // Corre las pruebas de todos los TAD en un solo ejecutable.
 // Cada test_<modulo>.cpp define una funcion test_<modulo>() sin main.
 //
-// Compilar y correr desde la raiz del repo
-// (library.cpp no va porque test_d.cpp ya lo incluye):
-//   g++ -std=c++17 -Wall -Wextra -I. -o test/tests test/*.cpp book.cpp catalog.cpp member.cpp member_list.cpp queue.cpp stack.cpp
+// Compilar y correr desde la raiz del repo (todos los .cpp menos main.cpp):
+//   g++ -std=c++17 -Wall -Wextra -I. -o test/tests test/*.cpp book.cpp catalog.cpp library.cpp member.cpp member_list.cpp queue.cpp stack.cpp
 //   ./test/tests
 
 #include <iostream>
