@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int main() {
+void test_stack() {
     Stack* historial = stack_create();
 
     cout << "Pila vacia: "
@@ -25,5 +25,4 @@ int main() {
 
     stack_destroy(historial);
 
-    return 0;
 }

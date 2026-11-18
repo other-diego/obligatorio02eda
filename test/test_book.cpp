@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+void test_book() {
     // Crear un libro con 2 ejemplares
     Book* libro = book_create(50, 2, "Ficciones", "Borges");
 
@@ -41,5 +41,4 @@ int main() {
     // Liberar memoria
     book_destroy(libro);
 
-    return 0;
 }
