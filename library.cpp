@@ -32,25 +32,25 @@ void library_destroy(Library* library) {
 void library_lend(Library* library, int numeroSocio, int codigoLibro) {
     Member* socio = member_list_find(library->miembros, numeroSocio);
     if (socio == nullptr) {
-        std::cout << "ERROR: El socio " << numeroSocio << " es inexistente\n";
+        std::cout << "ERROR socio " << numeroSocio << " inexistente\n";
         return;
     }
     
     Book* libro = catalog_find(library->catalogo, codigoLibro);
     if (libro == nullptr) {
-        std::cout << "ERROR: El libro " << codigoLibro << " es inexistente\n";
+        std::cout << "ERROR libro " << codigoLibro << " inexistente\n";
         return;
     }
 
     Queue* colaReservas = book_reservations(libro);
 
     if (member_has_loan(socio, codigoLibro) || queue_contains(colaReservas, numeroSocio)) {
-        std::cout << "ERROR: El socio ya tiene prestado o reservado ese libro\n";
+        std::cout << "ERROR el socio ya tiene prestado o reservado ese libro\n";
         return;
     }
 
     if (member_commitments(socio) >= 3) {
-        std::cout << "ERROR: El socio ya tiene 3 compromisos\n";
+        std::cout << "ERROR el socio ya tiene 3 compromisos\n";
         return;
     }
 
